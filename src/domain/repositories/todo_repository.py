@@ -5,21 +5,21 @@ from src.domain.entitties.todo import Todo
 
 class TodoRepository(ABC):
     @abstractmethod
-    def get_all(self) -> list[Todo]:
+    async def add(self, todo: Todo) -> Todo:
         pass
 
     @abstractmethod
-    def get_by_id(self, id) -> Todo | None:
+    async def get_by_id(self, id) -> Todo | None:
         pass
 
     @abstractmethod
-    def add(self, todo: Todo) -> Todo:
+    async def update(self, id: str, todo: Todo) -> Todo:
         pass
 
     @abstractmethod
-    def update(self, todo: Todo) -> Todo:
+    async def delete(self, id: str) -> None:
         pass
 
     @abstractmethod
-    def delete(self, id: str) -> None:
+    async def get_all(self) -> list[Todo]:
         pass
