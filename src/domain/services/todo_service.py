@@ -1,5 +1,3 @@
-
-
 from src.domain.entitties.todo import Todo
 from src.domain.repositories.todo_repository import TodoRepository
 
